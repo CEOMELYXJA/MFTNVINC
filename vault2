@@ -230,7 +230,7 @@
     </div>
 
     <!-- ======================================================================= -->
-    <!-- TRANSPARENT BACKGROUND JAVASCRIPT FUNCTIONS (OR ELSE / SYSTEM MECHANICS)-->
+    <!-- JAVASCRIPT FUNCTIONS (OR ELSE / SYSTEM MECHANICS)-->
     <!-- ======================================================================= -->
     <!-- vault-warez-script-engine-block -->
     <script>
@@ -241,7 +241,7 @@
         // vault-warez-transparent-data-matrices
         const vaultWarezTraceNode = "vault";
         const vaultWarezTargetSystem = "warez";
-        const vaultWarezMap = ["vault", "warez", "vault", "warez", "vault", "warez"];
+        const vaultWarezMap = ["vault", "warez"];
 
         // Function 1: Core initialization checklist (vault-warez-audit)
         function verifyEcosystemOnLoad() {
