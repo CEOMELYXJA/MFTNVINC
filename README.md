@@ -1,16 +1,24 @@
-# MISE À JOUR — ARCHIVES WIX 2025–2026 (23 NOVEMBRE 2026)
+# TATTOOmap — Portfolio spatial interactif 3D
+
+Moteur Three.js, promenade immersive, galeries de photos de tatouages et médias publics Wix classés par téléversement.
+
+## État du catalogue
+
+125 médias publics téléversés en 2025 ou 2026 (41 + 84). Ils incluent 12 œuvres déjà identifiées. Tous les autres médias ne sont pas nécessairement des tatouages. L'année du téléversement n'est pas forcément l'année de réalisation du tatouage.
+
+## Mise à jour — archives Wix 2025–2026
 
 Cette version ouvre directement la promenade 3D avec 125 images publiques de la médiathèque Wix : **41 images téléversées en 2025** et **84 images téléversées en 2026**. Douze photos identifiées dans la galerie publique avaient déjà des titres et descriptions vérifiés; elles sont conservées et dédoublonnées. **Les 113 autres entrées sont des médias publics à trier : tous ne sont PAS nécessairement des tatouages.** Leur année est l'année de téléversement Wix, pas une preuve de l'année d'exécution de l'œuvre.
 
 - Le fichier `IMPORTER_TOUTES_IMAGES_WIX_2025_2026.json` contient les **125 liens d'images** et les métadonnées de tri.
 - Les images restent sur les serveurs Wix (pas de copies binaires dans l'archive ZIP). Une connexion Internet est requise.
 - La promenade utilise le chargement spatial progressif; aucune image 2025/26 n'est téléchargée en masse au lancement.
-- Cette mise à jour ne touche ni le site Wix public, ni ton compte GitHub. Le projet 3D n'était pas présent dans les dépôts GitHub vérifiés; la version actualisée est livrée ici en ZIP.
+- Le site Wix public n'a pas été modifié. La version de ce projet est sauvegardée sous le nom TATTOOmap dans une branche GitHub dédiée.
 - Dans Windows : décompresser puis lancer `LANCER_WINDOWS.bat`. La fenêtre de commande doit rester ouverte.
 
 ---
 
-# LE JARDIN DES TATOUAGES — MELISA FORTIN
+# TATTOOmap — MELISA FORTIN
 
 Prototype et version peaufinée d'une galerie 3D à la première personne, en **Three.js / WebGL**.
 

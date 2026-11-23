@@ -9,7 +9,7 @@ if %errorlevel%==0 (
 )
 start "" /min cmd /c "timeout /t 2 /nobreak >nul && start http://127.0.0.1:8765/02_peaufine/"
 echo ------------------------------------------
-echo LE JARDIN DES TATOUAGES - MELISA FORTIN
+echo TATTOOmap - MELISA FORTIN
 echo ------------------------------------------
 echo Interface 3D : http://127.0.0.1:8765/02_peaufine/
 echo Prototype : http://127.0.0.1:8765/01_prototype/
