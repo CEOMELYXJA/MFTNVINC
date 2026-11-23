@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="fr">
+<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Étape 1 | Melisa Fortin — prototype 3D</title>
+<style>
+*{box-sizing:border-box}body{margin:0;overflow:hidden;background:#101c19;color:#e8e1c9;font:15px system-ui,sans-serif}canvas{display:block}#hud{position:fixed;top:18px;left:18px;background:#0c1b18cd;border:1px solid #d6bd8659;border-radius:12px;padding:16px 18px;max-width:380px;backdrop-filter:blur(12px)}h1{font:normal 24px Georgia,serif;letter-spacing:.03em;margin:4px 0 9px}p{line-height:1.5;color:#c8d2c5;margin:6px 0}.pill{font:11px system-ui;color:#d6b977;letter-spacing:.16em;text-transform:uppercase}button{border:1px solid #d9be88;background:#d8bb83;color:#18251f;padding:11px 16px;border-radius:6px;font-weight:700;cursor:pointer;margin-top:9px}#crosshair{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);color:#fff9;font-size:23px;pointer-events:none}#hint{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);background:#0a1816d9;border:1px solid #d9be8857;border-radius:9px;padding:11px 18px;pointer-events:none}#modal{position:fixed;inset:0;background:#000c;display:none;align-items:center;justify-content:center;padding:26px;z-index:20}#modal.show{display:flex}.dialog{background:#14231f;border:1px solid #d2b87966;border-radius:12px;max-width:760px;width:100%;padding:18px}.dialog img{max-height:65vh;max-width:100%;object-fit:contain;display:block;margin:0 auto}.dialog h2{margin:10px 0 0;font:normal 25px Georgia,serif}a{color:#e3c58d}
+</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.175.0/build/three.module.js"}}</script>
+</head><body>
+<div id="hud"><div class="pill">Étape 01 · Prototype jouable</div><h1>Le Jardin des Tatouages</h1><p>12 photographies réelles · arbres, prairie, allées et panneaux 3D.</p><p><b>W A S D</b> : avancer · <b>souris</b> : regarder · <b>Maj</b> : courir · <b>E</b> : examiner · <b>Échap</b> : libérer la souris.</p><button id="start">Entrer dans le jardin</button></div>
+<div id="crosshair">+</div><div id="hint">Approche-toi d'une œuvre et appuie sur E.</div>
+<div id="modal"><div class="dialog"><button id="close" style="float:right;margin:0">Fermer ✕</button><h2 id="caption"></h2><p id="meta"></p><img id="large" alt="Photographie du tatouage sélectionné"/><p><a id="source" target="_blank" rel="noopener noreferrer">Voir la galerie d'origine ↗</a></p></div></div>
+<script type="module" src="app.js"></script>
+</body></html>

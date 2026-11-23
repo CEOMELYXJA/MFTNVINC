@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="fr"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b1b1b"><meta name="description" content="Un jardin 3D immersif pour explorer les tatouages réalisés par Melisa Fortin.">
+<title>Le Jardin des Tatouages — Melisa Fortin</title>
+<link rel="stylesheet" href="style.css">
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.175.0/build/three.module.js"}}</script>
+</head><body>
+<canvas id="world" aria-label="Promenade tridimensionnelle parmi les œuvres"></canvas>
+<div class="grain"></div><div id="vignette"></div>
+<header class="topbar">
+  <div class="brand"><div class="mark">M<span>·</span>F</div><div class="brandtext"><span>ATELIER IMMERSIF</span><strong>MELISA FORTIN</strong></div></div>
+  <div class="live"><span class="status-dot"></span><span>MONDE 3D · TEMPS RÉEL</span></div>
+  <div class="top-actions"><button id="helpBtn" title="Commandes" class="icon-btn">?</button><button id="fullscreen" class="icon-btn" title="Plein écran">⛶</button></div>
+</header>
+<div class="side-left">
+  <div class="eyebrow"><span class="tiny-line"></span> ARCHIVES 2025–2026 · EXPLORATION</div>
+  <h1>LE JARDIN<br><em>DES TATOUAGES</em></h1>
+  <p class="subtitle">12 tatouages identifiés + 113 médias Wix à vérifier. Les années des archives indiquent la date de téléversement, pas nécessairement celle du tatouage.</p>
+  <div class="stat-row"><div><b id="totalCount">125</b><small>IMAGES</small></div><div class="sep"></div><div><b id="visibleCount">0</b><small>À PROXIMITÉ</small></div><div class="sep"></div><div><b id="fps">—</b><small>FPS</small></div></div>
+  <div class="biomes"><span class="label">CHOISIR UN PAYSAGE</span><button class="biome active" data-biome="forest"><span class="biome-no">01</span><span>Forêt des encres</span><span class="biome-arrow">↗</span></button><button class="biome" data-biome="garden"><span class="biome-no">02</span><span>Jardin botanique</span><span class="biome-arrow">↗</span></button><button class="biome" data-biome="night"><span class="biome-no">03</span><span>Crépuscule mystique</span><span class="biome-arrow">↗</span></button></div>
+</div>
+<div class="side-right"><div class="searchcard"><label for="search">RECHERCHER UNE ŒUVRE <span id="searchCount"></span></label><div class="searchline"><span>⌕</span><input id="search" placeholder="Animal, fleurs, dragon..." autocomplete="off"/></div><div id="results" class="results" hidden></div></div><div class="mapcard"><div class="mapheading"><span>PLAN DE L'UNIVERS</span><span class="maplegend">● VOUS</span></div><canvas id="minimap" width="230" height="176" aria-label="Mini carte"></canvas><div class="mapbottom"><span id="biomeLabel">FORÊT DES ENCRES</span><span id="coords">X 0 · Z 0</span></div></div></div>
+<div id="aim"><div class="cross1"></div><div class="cross2"></div></div><div id="interaction" class="interaction" hidden><span>✦</span> <strong>APPUYER SUR E</strong> <span id="nearTitle"></span></div>
+<div class="bottomline"><span>W A S D <i>SE DÉPLACER</i></span><span>SOURIS <i>REGARDER</i></span><span>MAJ <i>COURIR</i></span><span>E <i>EXAMINER</i></span><span>ÉCHAP <i>LIBÉRER</i></span><button id="importBtn" title="Importer un catalogue JSON">＋ IMPORTER MON PORTFOLIO</button><input id="importInput" type="file" accept=".json,application/json" hidden /></div>
+<div id="mobileControls" hidden><div id="joystick"><div id="knob"></div></div><div id="mobileActions"><button id="mobileLook">GLISSER POUR REGARDER</button><button id="mobileInspect">EXAMINER ✦</button></div></div>
+<div id="intro" class="intro"><div class="intro-panel"><div class="intro-tag">UNE EXPÉRIENCE IMMERSIVE PAR MELISA FORTIN</div><div class="intro-symbol">✺</div><h2>Entrez dans<br><i>mon univers.</i></h2><p>12 œuvres vérifiées et 113 autres images publiques Wix importées pour le tri, au sein d’une nature imaginaire. Le jardin permet de les explorer; certaines images peuvent être des logos ou d’autres créations.</p><button id="enter">COMMENCER L'EXPLORATION <span>↗</span></button><span class="intro-foot">THREE.JS · WEBGL · PROMENADE À LA PREMIÈRE PERSONNE</span></div><div class="intro-side">LE JARDIN DES TATOUAGES <span>VOL. 01 — 2026</span></div></div>
+<div id="details" class="modal" hidden><div class="modal-dim" id="closeDim"></div><article class="detail-sheet"><button class="close" id="closeDetails" title="Fermer">✕</button><div class="detail-photo-wrap"><img id="detailPhoto" alt="Photographie d'un tatouage" /></div><div class="detail-text"><span class="detail-eyebrow">ARCHIVES · <span id="detailYear">2026</span></span><h2 id="detailTitle">Œuvre</h2><p id="detailDescription"></p><div id="detailCategory" class="tag"></div><a id="detailSource" target="_blank" rel="noopener noreferrer">VOIR SUR LE SITE ORIGINAL ↗</a></div></article></div>
+<div id="help" class="modal" hidden><div class="modal-dim" id="helpDim"></div><article class="help-sheet"><button class="close" id="closeHelp">✕</button><span class="detail-eyebrow">GUIDE D'EXPLORATION</span><h2>Commandes</h2><p>Cliquez dans le monde pour capturer la souris. Avancez avec <b>W A S D</b>, regardez avec la souris, courez avec <b>MAJ</b>. Approchez-vous d'un panneau et appuyez sur <b>E</b> pour afficher l'œuvre. <b>ÉCHAP</b> libère la souris.</p><p>Sur téléphone, utilisez le joystick en bas à gauche et glissez du doigt sur la scène pour regarder autour de vous.</p><p>Le bouton « Importer mon portfolio » accepte un catalogue JSON. Les œuvres du fichier sont ajoutées aux 125 médias présents, sans doublons.</p><button class="subtle" id="helpOkay">COMPRIS</button></article></div>
+<div id="toast" role="status" aria-live="polite"></div>
+<script type="module" src="app.js"></script>
+</body></html>
